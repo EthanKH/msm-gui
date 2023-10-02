@@ -16,43 +16,43 @@ class ActorsController < ApplicationController
   end
   
   def create
-    @directors = Director.new
-    @directors.name = params.fetch("director_name")
-    @directors.dob = params.fetch("director_dob")
-    @directors.bio = params.fetch("director_bio")
-    @directors.image = params.fetch("director_image")
+    @actors = Actor.new
+    @actors.name = params.fetch("actor_name")
+    @actors.dob = params.fetch("actor_dob")
+    @actors.bio = params.fetch("actor_bio")
+    @actors.image = params.fetch("actor_image")
     
-    if @directors.valid?
-      @directors.save
-      redirect_to("/directors", { :notice => "Director created successfully." })
+    if @actors.valid?
+      @actors.save
+      redirect_to("/actors", { :notice => "Actor created successfully." })
     else
-      redirect_to("/directors", { :notice => "Director failed to create successfully." })
+      redirect_to("/actors", { :notice => "Actor failed to create successfully." })
     end
   end
 
   def update
     the_id = params.fetch("path_id")
-    @directors = Director.where({ :id => the_id }).at(0)
+    @actors = Actor.where({ :id => the_id }).at(0)
     
-    @directors.name = params.fetch("director_name")
-    @directors.dob = params.fetch("director_dob")
-    @directors.bio = params.fetch("director_bio")
-    @directors.image = params.fetch("director_image")
+    @actors.name = params.fetch("actor_name")
+    @actors.dob = params.fetch("actor_dob")
+    @actors.bio = params.fetch("actor_bio")
+    @actors.image = params.fetch("actor_image")
     
-    if @directors.valid?
-      @directors.save
-      redirect_to("/directors", { :notice => "Director updated successfully." })
+    if @actors.valid?
+      @actors.save
+      redirect_to("/actors", { :notice => "Actor updated successfully." })
     else
-      redirect_to("/directors", { :notice => "Director failed to update successfully." })
+      redirect_to("/actors", { :notice => "Actor failed to update successfully." })
     end
   end
 
   def destroy
     the_id = params.fetch("path_id")
-    @directors = Director.where({ :id => the_id }).at(0)
+    @actors = Actor.where({ :id => the_id }).at(0)
 
-    @directors.destroy
+    @actors.destroy
 
-    redirect_to("/directors", { :notice => "Director deleted successfully."})
+    redirect_to("/actors", { :notice => "Actor deleted successfully."})
   end
 end
