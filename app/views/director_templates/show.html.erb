@@ -5,7 +5,42 @@
 <a href="/directors">
   Go back
 </a>
+<p>Delete Director</p>
 
+<hr>
+<form action="/modify_director/<%= @the_director.id %>" method="post">
+  <div>
+    <label for="director_name_box">
+      Name
+    </label>
+    <input type="text" id="director_name_box" name="director_name" value="<%= @the_director.name %>">
+  </div>
+
+  <div>
+    <label for="director_dob">
+      Dob
+    </label>
+    <input type="text" id="director_dob_box" name="director_dob" value="<%= @the_director.dob %>">
+  </div>
+
+  <div>
+    <label for="director_bio_box">
+      Bio
+    </label>
+    <input type="text" id="director_bio_box" name="director_bio" value="<%= @the_director.bio %>">
+  </div>
+
+  <div>
+    <label for="director_image_box">
+      Image
+    </label>
+    <input type="text" id="director_image_box" name="director_image" value="<%= @the_director.image %>">
+  </div>
+  
+  <button>
+    Update director
+  </button>
+</form>
 <hr>
 
 <dl>
@@ -34,7 +69,7 @@
     Image
   </dt>
   <dd>
-    <img src="<%= @the_director.image %>" style="width:250px;">
+    <img src="<%= @the_director.image %>">
   </dd>
 
   <dt>
@@ -95,7 +130,7 @@
     </td>
 
     <td>
-      <img src="<%= a_movie.image %>" style="width:250px;">
+      <img src="<%= a_movie.image %>">
     </td>
 
     <td>

@@ -3,6 +3,40 @@
 </h1>
 
 <hr>
+<form action="/add_director" method="post">
+  <div>
+    <label for="director_name_box">
+      Name
+    </label>
+    <input type="text" id="director_name_box" name="director_name">
+  </div>
+
+  <div>
+    <label for="director_dob">
+      Dob
+    </label>
+    <input type="text" id="director_dob_box" name="director_dob">
+  </div>
+
+  <div>
+    <label for="director_bio_box">
+      Bio
+    </label>
+    <input type="text" id="director_bio_box" name="director_bio">
+  </div>
+
+  <div>
+    <label for="director_image_box">
+      Image
+    </label>
+    <input type="text" id="director_image_box" name="director_image">
+  </div>
+  
+  <button>
+    Create director
+  </button>
+</form>
+<hr>
 
 <table border="1">
   <tr>
@@ -33,7 +67,7 @@
     </td>
 
     <td>
-      <img src="<%= director.image %>" style="width:250px;">
+      <img src="<%= director.image %>">
     </td>
 
     <td>
