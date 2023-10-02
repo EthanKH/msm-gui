@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     @movies.duration = params.fetch("movie_duration")
     @movies.description = params.fetch("movie_description")
     @movies.image = params.fetch("movie_image")
-    @movies.director_id = params.fetch("movie_director_id")
+    @movies.director_id = params.fetch("director_id")
     
     if @movies.valid?
       @movies.save
