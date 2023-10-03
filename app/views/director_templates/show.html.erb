@@ -2,10 +2,17 @@
   Director #<%= @the_director.id %> details
 </h1>
 
-<a href="/directors">
-  Go back
-</a>
-<p>Delete Director</p>
+<div>
+  <a href="/directors">
+    Go back
+  </a>
+</div>
+
+<div>
+  <a href="/delete_director/<%= @the_director.id %>">
+    Delete Director
+  </a>
+</div>
 
 <hr>
 <form action="/modify_director/<%= @the_director.id %>" method="post">
