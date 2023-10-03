@@ -41,9 +41,9 @@ class ActorsController < ApplicationController
     
     if @actors.valid?
       @actors.save
-      redirect_to("/actors", { :notice => "Actor updated successfully." })
+      redirect_to("/actors/#{@actors.id}")
     else
-      redirect_to("/actors", { :notice => "Actor failed to update successfully." })
+      redirect_to("/actors/#{@actors.id}")
     end
   end
 
